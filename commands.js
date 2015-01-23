@@ -551,8 +551,8 @@ exports.commands = {
 		var dexNumbers = [];
 		if (parameters.length > 0) {
 			//create an array for all dex numbers and then shuffle it
-			var dexLength = ((tiers.cap === 0 ? 19 : 0) + 723);
-			if (tiers.cap === 2) dexLength = 19;
+			var dexLength = 723;
+			if (tiers.cap === 2) dexLength = 0;
 			for (g=(tiers.cap === 0 ? 0 : -19); g<dexLength; g++) {
 				dexNumbers.push(g);
 			}
