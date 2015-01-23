@@ -42,8 +42,12 @@ Everyone is more than welcome to contribute to the bot.
 However, please refrain from adding more example commands.
 
 Credits:
- - TalkTakesTime (Development)
- - Quinella (Development)
+ - TalkTakesTime (Development - Pokemon Showdown Bot source code)
+ - Quinella (Development - Pokemon Showdown Bot source code)
+ - Morfent (Development - Regex features)
+ - SolarisFox (Development - Art commands, mail function)
+ - AxeBane (Development - misc. features)
+ - OtterPower (Concept Art)
 
 License
 -------
