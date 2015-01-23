@@ -381,7 +381,7 @@ exports.commands = {
 		this.say(con, room, text);
 	},
 	leave: function(arg, by, room, con) {
-		if (!this.hasRank(by, '#~') && toId(by) !== 'healndeal') return false;
+		if (!this.hasRank(by, '#~')) return false;
 		this.say(con, room, '/leave');
 	},
 
@@ -1091,17 +1091,6 @@ exports.commands = {
 				this.say(con, room, '<a href="' + caption + '">' + link.join(":1,") + '</a>');
 			}
 		}
-	},
-	rekt: function(arg, by, room, con) {
-		if (config.excepts.indexOf(toId(by)) === -1) return false;
-		var target = (!arg) ? '!' : ' ' + arg + '!';
-		this.say(con, room, 'git foxed on' + target + '');
-	},
-	solve: function(arg, by, room, con) {
-		if (config.excepts.indexOf(toId(by)) === -1) return false;
-		if (!arg) arg = 'all the problems';
-		this.say(con, room, 'solving ' + arg + ' in progress!');
-		this.say(con, room, '' + by + ' has fixed everything!');
 	},
 	esupport: function(arg, by, room, con) {
 		if ((this.canUse('esupport', room, by) && config.artrooms.indexOf(room) !== -1) || room.charAt(0) === ',') {
