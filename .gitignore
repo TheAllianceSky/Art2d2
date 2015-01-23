@@ -3,6 +3,7 @@
 npm-debug.log
 config.js
 settings.json
+messages.json
 
 .hg
 .bzr
