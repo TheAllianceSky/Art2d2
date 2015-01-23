@@ -9,9 +9,6 @@ const DAeuro = 134;
 const DApound = 140;
 const MESSAGES_TIME_OUT = 7 * 24 * 60 * 60 * 1000;
 var NumOfJokes = 0;
-for (joke in Jokes) {
-	NumOfJokes++;
-}
 var middleButton = '<a href="http://ps-art-room-official.deviantart.com/journal/Contest-Redesign-that-pokemon-504429821"><img src="http://i.imgur.com/KZhRg7q.gif" width="105" height="30"></a>';
 
 var url = require('url');
@@ -101,7 +98,6 @@ exports.commands = {
 		if (!this.hasRank(by, '%@&#~') || room.charAt(0) === ',') return false;
 
 		var settable = {
-			joke: 1,
 			fox: 1,
 			esupport: 1,
 			autoban: 1,
@@ -903,19 +899,6 @@ exports.commands = {
 	calc: function(arg, by, room, con) {
 		if (room.charAt(0) !== ',' && room !== 'capproject') return false;
 		this.say(con, room, 'CAP Damage Calculator: http://sparktrain.github.io/');
-	},
-	joke: function(arg, by, room, con) {
-		if (this.canUse('joke', room, by) || room.charAt(0) === ',') {
-			var number = Math.floor((NumOfJokes + 1) * Math.random());
-			if (arg && !isNaN(arg) && config.excepts.indexOf(toId(by)) > -1) number = arg;
-			if (number == 0) {
-				var text = 'Here\'s a joke: ' + by + '';
-			} else {
-				if (!Jokes[number]) return this.say(con, room, 'Empty joke cell at: ' + number + '. Please report to bot owner.');
-				var text = Jokes[number].joke;
-			}
-			this.say(con, room, text);
-		}
 	},
 	fox: function(arg, by, room, con) {
 		if (this.canUse('fox', room, by) || room.charAt(0) === ',') {
